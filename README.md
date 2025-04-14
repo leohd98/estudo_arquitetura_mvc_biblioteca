@@ -1,105 +1,79 @@
-📚 Sistema de Biblioteca (Arquitetura MVC)
+## Sistema de Biblioteca
+Este é um sistema simples de gerenciamento de livros em uma biblioteca, desenvolvido em Python. O sistema permite ao usuário realizar diversas operações, como pesquisar, adicionar, modificar, excluir livros ou sair do sistema.
 
-Este é um projeto simples em Python para gerenciar ações de uma biblioteca, estruturado usando o padrão **MVC (Model-View-Controller)**. A ideia central é mostrar como separar responsabilidades e manter um código limpo, modular e de fácil manutenção.
+## Funcionalidades
+Pesquisar livro: Permite ao usuário buscar por um livro.
 
-## --------------------------------------------------------------------------------------
+Adicionar livro: Permite adicionar um novo livro à lista da biblioteca.
 
-🧠 Objetivo
+Modificar livro: Permite modificar o título de um livro existente.
 
-Permitir que o usuário execute ações como:
+Excluir livro: Permite excluir um livro da biblioteca.
 
-- Pesquisar livro
-- Adicionar livro
-- Modificar livro
-- Excluir livro
-- Sair do sistema
+Sair do sistema: Encerra o programa.
 
-O menu é **dinâmico**, ou seja: basta adicionar uma nova opção na lista, criar a função correspondente, e ela já funcionará automaticamente — sem alterar o controlador.
+## Estrutura do Projeto
+O projeto é dividido em cinco arquivos principais:
 
-## --------------------------------------------------------------------------------------
+1. actions.py
+Contém as funções que executam as ações específicas do sistema. Cada função exibe uma mensagem indicando a execução da ação correspondente.
 
-📁 Estrutura do Projeto
+Funções:
+
+pesquisar_livro(): Simula a pesquisa de um livro.
+
+adicionar_livro(): Simula a adição de um livro.
+
+modificar_livro(): Simula a modificação de um livro.
+
+excluir_livro(): Simula a exclusão de um livro.
+
+sair_do_sistema(): Exibe a mensagem de saída e encerra o programa.
+
+2. controller.py
+É responsável por gerenciar a interação do usuário com as opções do sistema. Ele captura a escolha do usuário, valida a entrada e direciona para a função correspondente no arquivo actions.py. Além disso, possui a lógica para controlar o fluxo do programa.
+
+Funções:
+
+obter_escolha_usuario(): Recebe a escolha do usuário e valida a entrada.
+
+direcionador(): Direciona a execução para a função correspondente com base na escolha do usuário.
+
+pesquisar_livro_controller(): Chama a função de pesquisa de livro.
+
+adicionar_livro_controller(): Chama a função de adicionar livro.
+
+modificar_livro_controller(): Chama a função de modificar livro.
+
+excluir_livro_controller(): Chama a função de excluir livro.
+
+sair_do_sistema_controller(): Chama a função de sair do sistema.
+
+iniciar_sistema(): Exibe o menu inicial e aguarda a interação do usuário.
+
+3. main.py
+É o ponto de entrada do programa. Ele importa e chama a função iniciar_sistema() do arquivo controller.py para iniciar o sistema.
+
+4. model.py
+Contém os dados (livros) que o sistema manipula. A lista de livros é convertida para maiúsculas para garantir a consistência na manipulação dos dados.
+
+5. view.py
+Responsável pela interação com o usuário através da interface de linha de comando. Ele exibe o menu de opções e as mensagens do sistema.
+
+Funções:
+
+mostrar_menu(): Exibe o menu com as opções disponíveis.
+
+mostrar_mensagem(): Exibe uma mensagem personalizada no console.
+
+obter_dado_int(): Recebe uma entrada do usuário e a converte para um número inteiro.
+
+## Estrutura de Arquivos
 .
-├── main.py          # Ponto de entrada da aplicação
-├── model.py         # Dados e regras de negócio
-├── view.py          # Interface com o usuário (entrada/saída)
-├── controller.py    # Lógica de controle e fluxo do sistema
-└── actions.py       # Funções principais (ações do menu)
-
-## --------------------------------------------------------------------------------------
-
-🧩 Lógica da Arquitetura
-
-`main.py`
-Arquivo principal, responsável apenas por iniciar o sistema.
-
-## --------------------------------------------------------------------------------------
-
-`model.py`
-Contém os dados da aplicação. Neste caso, é uma lista de livros:
-
-## --------------------------------------------------------------------------------------
-
-`view.py`
-Responsável por **exibir o menu** e **mostrar mensagens** ao usuário. Mantém toda a interação visual centralizada.
-
-## --------------------------------------------------------------------------------------
-
-`actions.py`
-Contém as **ações que o usuário pode executar** (funções como `pesquisar_livro`, `adicionar_livro`, etc).  
-Essas funções são chamadas de forma dinâmica, de acordo com a escolha do usuário.
-
-## --------------------------------------------------------------------------------------
-
-`controller.py`
-Responsável por:
-
-- Exibir o menu
-- Obter a escolha do usuário
-- Direcionar a ação correta
-
-O truque aqui é o uso do `globals()` para **chamar dinamicamente funções** com base na escolha do usuário:
-
-Esse formato permite que você apenas:
-
-1. Adicione uma nova string no menu (`"Recomendar livro"`)
-2. Crie a função `def recomendar_livro():` no `actions.py`
-
-E pronto! A nova funcionalidade já estará funcionando ✨
-
-## --------------------------------------------------------------------------------------
-
-🔧 Como adicionar uma nova ação?
-
-1. No `iniciar_sistema()` (em `controller.py`), adicione a nova opção:
-
-```python
-opcoes = [
-    "Pesquisar livro",
-    "Adicionar livro",
-    "Recomendar livro",  # 👈 nova opção
-    "Sair do sistema"
-]
-```
-
-2. No `actions.py`, crie a função com o nome formatado:
-
-```python
-def recomendar_livro():
-    mostrar_mensagem("Função de recomendar livro executada.")
-```
-
-Feito! Agora o menu já reconhece e executa essa nova ação automaticamente 🧩
-
-## --------------------------------------------------------------------------------------
-
-🛠 Requisitos
-
-- Python 3.7+
-- Terminal ou IDE com suporte a entrada de dados
-
-## --------------------------------------------------------------------------------------
-
-✍️ Autor
-
-Desenvolvido por Leonardo Hoffmann Dias.
+├── actions.py         # Contém as funções de ações do sistema
+├── controller.py      # Controlador do fluxo de interações
+├── main.py            # Ponto de entrada para o sistema
+├── model.py           # Contém os dados (livros)
+└── view.py            # Exibe o menu e interage com o usuário
+Contribuições
+Sinta-se à vontade para fazer melhorias no projeto, sugerir novas funcionalidades ou corrigir eventuais bugs. Para contribuir, basta seguir os passos:

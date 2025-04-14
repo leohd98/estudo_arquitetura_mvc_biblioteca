@@ -9,3 +9,6 @@ def mostrar_menu(opcoes):
 
 def mostrar_mensagem(mensagem):
     print(mensagem)
+
+def obter_dado_int(mensagem):
+    return int(input(mensagem))
