@@ -15,7 +15,7 @@ Sair do sistema: Encerra o programa.
 ## Estrutura do Projeto
 O projeto é dividido em cinco arquivos principais:
 
-###1. actions.py
+### actions.py
 Contém as funções que executam as ações específicas do sistema. Cada função exibe uma mensagem indicando a execução da ação correspondente.
 
 Funções:
@@ -30,7 +30,7 @@ excluir_livro(): Simula a exclusão de um livro.
 
 sair_do_sistema(): Exibe a mensagem de saída e encerra o programa.
 
-###2. controller.py
+### controller.py
 É responsável por gerenciar a interação do usuário com as opções do sistema. Ele captura a escolha do usuário, valida a entrada e direciona para a função correspondente no arquivo actions.py. Além disso, possui a lógica para controlar o fluxo do programa.
 
 Funções:
@@ -51,13 +51,13 @@ sair_do_sistema_controller(): Chama a função de sair do sistema.
 
 iniciar_sistema(): Exibe o menu inicial e aguarda a interação do usuário.
 
-###3. main.py
+### main.py
 É o ponto de entrada do programa. Ele importa e chama a função iniciar_sistema() do arquivo controller.py para iniciar o sistema.
 
-###4. model.py
+### model.py
 Contém os dados (livros) que o sistema manipula. A lista de livros é convertida para maiúsculas para garantir a consistência na manipulação dos dados.
 
-###5. view.py
+### view.py
 Responsável pela interação com o usuário através da interface de linha de comando. Ele exibe o menu de opções e as mensagens do sistema.
 
 Funções:
@@ -69,10 +69,15 @@ mostrar_mensagem(): Exibe uma mensagem personalizada no console.
 obter_dado_int(): Recebe uma entrada do usuário e a converte para um número inteiro.
 
 ## Estrutura de Arquivos
+
 ├── actions.py         # Contém as funções de ações do sistema
+
 ├── controller.py      # Controlador do fluxo de interações
+
 ├── main.py            # Ponto de entrada para o sistema
+
 ├── model.py           # Contém os dados (livros)
+
 └── view.py            # Exibe o menu e interage com o usuário
 
 Contribuições
