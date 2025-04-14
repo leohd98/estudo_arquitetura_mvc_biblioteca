@@ -2,7 +2,7 @@
 
 Este é um projeto simples em Python para gerenciar ações de uma biblioteca, estruturado usando o padrão **MVC (Model-View-Controller)**. A ideia central é mostrar como separar responsabilidades e manter um código limpo, modular e de fácil manutenção.
 
-## ---------------------------------------------------------------------------------------------
+## --------------------------------------------------------------------------------------
 
 🧠 Objetivo
 
@@ -16,7 +16,7 @@ Permitir que o usuário execute ações como:
 
 O menu é **dinâmico**, ou seja: basta adicionar uma nova opção na lista, criar a função correspondente, e ela já funcionará automaticamente — sem alterar o controlador.
 
-## ---------------------------------------------------------------------------------------------
+## --------------------------------------------------------------------------------------
 
 📁 Estrutura do Projeto
 .
@@ -26,30 +26,30 @@ O menu é **dinâmico**, ou seja: basta adicionar uma nova opção na lista, cri
 ├── controller.py    # Lógica de controle e fluxo do sistema
 └── actions.py       # Funções principais (ações do menu)
 
-## ---------------------------------------------------------------------------------------------
+## --------------------------------------------------------------------------------------
 
 🧩 Lógica da Arquitetura
 
 `main.py`
 Arquivo principal, responsável apenas por iniciar o sistema.
 
-## ---------------------------------------------------------------------------------------------
+## --------------------------------------------------------------------------------------
 
 `model.py`
 Contém os dados da aplicação. Neste caso, é uma lista de livros:
 
-## ---------------------------------------------------------------------------------------------
+## --------------------------------------------------------------------------------------
 
 `view.py`
 Responsável por **exibir o menu** e **mostrar mensagens** ao usuário. Mantém toda a interação visual centralizada.
 
-## ---------------------------------------------------------------------------------------------
+## --------------------------------------------------------------------------------------
 
 `actions.py`
 Contém as **ações que o usuário pode executar** (funções como `pesquisar_livro`, `adicionar_livro`, etc).  
 Essas funções são chamadas de forma dinâmica, de acordo com a escolha do usuário.
 
-## ---------------------------------------------------------------------------------------------
+## --------------------------------------------------------------------------------------
 
 `controller.py`
 Responsável por:
@@ -67,7 +67,7 @@ Esse formato permite que você apenas:
 
 E pronto! A nova funcionalidade já estará funcionando ✨
 
-## ---------------------------------------------------------------------------------------------
+## --------------------------------------------------------------------------------------
 
 🔧 Como adicionar uma nova ação?
 
@@ -91,14 +91,14 @@ def recomendar_livro():
 
 Feito! Agora o menu já reconhece e executa essa nova ação automaticamente 🧩
 
-## ---------------------------------------------------------------------------------------------
+## --------------------------------------------------------------------------------------
 
 🛠 Requisitos
 
 - Python 3.7+
 - Terminal ou IDE com suporte a entrada de dados
 
-## ---------------------------------------------------------------------------------------------
+## --------------------------------------------------------------------------------------
 
 ✍️ Autor
 
