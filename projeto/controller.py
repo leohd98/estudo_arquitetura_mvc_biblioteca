@@ -1,3 +1,4 @@
+import sys
 from model import *
 from view import *
 from actions import *
@@ -7,7 +8,7 @@ from actions import *
 def obter_escolha_usuario(opcoes):
     while True:
         try:
-            escolha = int(input('Escolha uma opção: '))
+            escolha = obter_dado_int('Escolha uma opção: ')
             if 1 <= escolha <= len(opcoes):
                 return escolha
             else:
@@ -20,11 +21,44 @@ def obter_escolha_usuario(opcoes):
 def direcionador(escolha, opcoes):
     valor_escolhido = opcoes[escolha - 1]
     valor_formatado = valor_escolhido.lower().replace(" ", "_")
+    controller_function_name = f"{valor_formatado}_controller"
+    
+    try:
+        # Usando getattr() para buscar a função controladora dinamicamente
+        controller_function = getattr(sys.modules[__name__], controller_function_name)
+        controller_function()  # Chama a função do controlador
+    except AttributeError:
+        mostrar_mensagem(f"Controlador '{controller_function_name}()' não encontrado.")
 
-    if valor_formatado in globals():
-        globals()[valor_formatado]()  # Chama a função dinamicamente
-    else:
-        mostrar_mensagem(f"Função '{valor_formatado}()' ainda não foi implementada.")
+
+
+def pesquisar_livro_controller():
+    # Aqui você pode adicionar lógica extra, se necessário
+    pesquisar_livro()  # Chama a função na camada de actions
+
+
+
+def adicionar_livro_controller():
+    # Lógica extra do controlador, se necessário
+    adicionar_livro()  # Chama a função na camada de actions
+
+
+
+def modificar_livro_controller():
+    # Lógica extra do controlador, se necessário
+    modificar_livro()  # Chama a função na camada de actions
+
+
+
+def excluir_livro_controller():
+    # Lógica extra do controlador, se necessário
+    excluir_livro()  # Chama a função na camada de actions
+
+
+
+def sair_do_sistema_controller():
+    # Lógica extra do controlador, se necessário
+    sair_do_sistema()  # Chama a função na camada de actions
 
 
 
