@@ -1,5 +1,5 @@
-## Sistema de Biblioteca
-Este é um sistema simples de gerenciamento de livros em uma biblioteca, desenvolvido em Python. O sistema permite ao usuário realizar diversas operações, como pesquisar, adicionar, modificar, excluir livros ou sair do sistema.
+## Sistema de Biblioteca Usando Arquitetura MVC
+Este é um sistema de gerenciamento de livros em uma biblioteca usando a arquitetura MVC, desenvolvido em Python. O sistema permite ao usuário realizar diversas operações, como pesquisar, adicionar, modificar, excluir livros ou sair do sistema.
 
 ## Funcionalidades
 Pesquisar livro: Permite ao usuário buscar por um livro.
@@ -69,11 +69,13 @@ mostrar_mensagem(): Exibe uma mensagem personalizada no console.
 obter_dado_int(): Recebe uma entrada do usuário e a converte para um número inteiro.
 
 ## Estrutura de Arquivos
-.
 ├── actions.py         # Contém as funções de ações do sistema
 ├── controller.py      # Controlador do fluxo de interações
 ├── main.py            # Ponto de entrada para o sistema
 ├── model.py           # Contém os dados (livros)
 └── view.py            # Exibe o menu e interage com o usuário
+
 Contribuições
-Sinta-se à vontade para fazer melhorias no projeto, sugerir novas funcionalidades ou corrigir eventuais bugs. Para contribuir, basta seguir os passos:
+Sinta-se à vontade para fazer melhorias no projeto, sugerir novas funcionalidades ou corrigir eventuais bugs.
+
+Desenvolvido por Leonardo Hoffmann Dias
